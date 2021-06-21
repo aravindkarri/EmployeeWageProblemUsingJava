@@ -16,7 +16,7 @@ public class EmployeeWage {
 		int empHrs=0;
 		int totalWorkingDays=0;
 		int totalEmpHrs=0;
-		System.out.println("Welcome to Employee Computation Program on Master Branch");
+		System.out.println("Welcome to Employee Computation Program");
 
 		while (totalWorkingDays<=NUM_OF_WORKING_DAYS && totalEmpHrs<=MAX_WORKING_HRS)
 		{
