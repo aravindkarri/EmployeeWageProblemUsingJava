@@ -1,4 +1,4 @@
-package com.bridgelabz.EmployeeWageComputation;
+package com.bridgelabz.employeewagecomputation;
 
 public class EmployeeWage {
 
