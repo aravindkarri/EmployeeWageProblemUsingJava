@@ -9,17 +9,18 @@ public class EmployeeWage {
 	public static final int NUM_OF_WORKING_DAYS = 20;
 	public static final int MAX_WORKING_HRS = 100;
 
-	public static void main(String args[]) {
-		
+	public static void calculateEmployeeWage()
+	{ 
 		//variables
-		int salary=0;
-		int empHrs=0;
+		int monthlyEmpWage=0;
 		int totalWorkingDays=0;
 		int totalEmpHrs=0;
 		System.out.println("Welcome to Employee Computation Program");
 
-		while (totalWorkingDays<=NUM_OF_WORKING_DAYS && totalEmpHrs<=MAX_WORKING_HRS)
+		while (totalWorkingDays<NUM_OF_WORKING_DAYS && totalEmpHrs<MAX_WORKING_HRS)
 		{
+			int empHrs=0;
+			int dailyEmpWage=0;
 			totalWorkingDays++;
 			double empCheck = Math.floor(Math.random() * 10) % 3;
 			switch ((int)empCheck) {
@@ -33,9 +34,13 @@ public class EmployeeWage {
 			default:
 				System.out.println("Employee is absent");
 			}
-			totalEmpHrs += empHrs;
+			dailyEmpWage = EMP_RATE_PER_HR *empHrs;
+			totalEmpHrs  += empHrs;
+			monthlyEmpWage += dailyEmpWage;
 		}
-		salary = (totalEmpHrs * EMP_RATE_PER_HR);
-		System.out.println("Employee Wage for a month is "+salary);
+		System.out.println("Employee Wage for a month is "+monthlyEmpWage);
+	}
+	public static void main(String args[]) {
+		calculateEmployeeWage();
 	}
 }
