@@ -5,11 +5,8 @@ public class EmployeeWage {
 	//constants
 	public static final int IS_FULL_TIME = 1;
 	public static final int IS_PART_TIME = 2;
-	public static final int EMP_RATE_PER_HR = 20;
-	public static final int NUM_OF_WORKING_DAYS = 20;
-	public static final int MAX_WORKING_HRS = 100;
 
-	public static void calculateEmployeeWage()
+	public static void calculateEmployeeWage(String companyName,int empWagePerHour,int maxWorkingDays,int maxWorkingHrs)
 	{ 
 		//variables
 		int monthlyEmpWage=0;
@@ -17,7 +14,7 @@ public class EmployeeWage {
 		int totalEmpHrs=0;
 		System.out.println("Welcome to Employee Computation Program");
 
-		while (totalWorkingDays<NUM_OF_WORKING_DAYS && totalEmpHrs<MAX_WORKING_HRS)
+		while (totalWorkingDays<maxWorkingDays && totalEmpHrs<maxWorkingHrs)
 		{
 			int empHrs=0;
 			int dailyEmpWage=0;
@@ -34,13 +31,15 @@ public class EmployeeWage {
 			default:
 				System.out.println("Employee is absent");
 			}
-			dailyEmpWage = EMP_RATE_PER_HR *empHrs;
+			dailyEmpWage = empWagePerHour *empHrs;
 			totalEmpHrs  += empHrs;
 			monthlyEmpWage += dailyEmpWage;
 		}
-		System.out.println("Employee Wage for a month is "+monthlyEmpWage);
+		System.out.println("Employee Wage for a month in "+companyName+ " is "+monthlyEmpWage);
 	}
 	public static void main(String args[]) {
-		calculateEmployeeWage();
+		calculateEmployeeWage("Bridgelabz",20,25,100);
+		calculateEmployeeWage("Reliance",20,10,200);
+		
 	}
 }
